@@ -16,7 +16,7 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public E get(int index) {
-        Node<E> temp = head;
+        Node<E> temp = this.head;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
@@ -38,7 +38,7 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public void add(int index, E e) {
-        Node temp = head;
+        Node temp = this.head;
         Node holder;
 
         for(int i=0; i < index-1 && temp.next != null; i++) {
@@ -52,10 +52,17 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public E remove(int index) {
-       Node temp =this.head;
+        Node<E> temp = this.head;
+        Node holder;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        holder = temp.next;
+        temp.next=temp.next.next;
+        numNodes--;
+        return temp.data;
 
 
-        return null;
     }
 
     @Override
@@ -75,7 +82,7 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public int indexOf(E e) {
-        Node<E> temp = head;
+        Node<E> temp = this.head;
         int count=0;
         while (temp.next!=null){
           if (temp.getData()== e){

@@ -24,10 +24,12 @@ public class Test {
         linkedList.add(2);
         linkedList.add(3);
         linkedList.add(4);
-        linkedList.add(3,5);
+        linkedList.add(5,5);
         linkedList.printList();
         System.out.println(linkedList.indexOf(5));
         System.out.println(linkedList.contain(2));
+        linkedList.remove(0);
+        linkedList.printList();
 
 
     }
