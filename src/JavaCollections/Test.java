@@ -27,9 +27,10 @@ public class Test {
         linkedList.add(4);
         linkedList.add(5,5);
         linkedList.printList();
+        System.out.println();
         System.out.println(linkedList.indexOf(2));
         System.out.println(linkedList.contain(2));
-        linkedList.remove(4);
+        linkedList.remove(linkedList.getSize()-1);
         linkedList.printList();
 
 

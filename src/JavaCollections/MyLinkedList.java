@@ -27,6 +27,8 @@ public class MyLinkedList<E> implements MyList<E>{
     public void add(E e) {
         if (this.head == null) {
             this.head = new Node<>(e);
+            numNodes++;
+            return ;
         }
         Node temp = this.head;
         while (temp.next != null) {
@@ -53,11 +55,12 @@ public class MyLinkedList<E> implements MyList<E>{
     @Override
     public E remove(int index) {
         Node<E> temp = this.head;
-        Node holder;
-        for (int i = 0; i < index; i++) {
+
+        for (int i = 0; i < index-1; i++) {
             temp = temp.next;
         }
-        holder = temp.next;
+
+
         temp.next=temp.next.next;
         numNodes--;
         return temp.data;
@@ -103,8 +106,9 @@ public class MyLinkedList<E> implements MyList<E>{
     public void printList() {
         Node<E> temp = head;
         for (int i =0;i<getSize();i++){
-            temp=temp.next;
+
             System.out.print(temp.getData()+" ");
+            temp=temp.next;
 
         }
     }
