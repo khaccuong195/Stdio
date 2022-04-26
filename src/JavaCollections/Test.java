@@ -2,26 +2,32 @@ package JavaCollections;
 
 public class Test {
     public static void main(String[] args) {
-       /* MyList<String> list = new MyArrayList<>();
+        MyList<String> list = new MyArrayList<>();
         list.clear();
-        list.add("America");
-        list.add("Canada");
-        list.add("Russia");
-        list.add("France");
-        list.add(1,"vietnam");
+        list.add("net");
+        list.add("zet");
+        list.add("bet");
+        list.add("het");
+        list.add(1,"net");
+        System.out.println("danh sach list");
         for (int i = 0;i<list.getSize();i++){
             System.out.print(list.get(i)+",");
         }
-        System.out.println();*/
+        System.out.println(list.indexOf("net"));
+        System.out.println(list.contain("net"));
 
-       MyLinkedList<Integer> linkedList = new MyLinkedList<>(11);
 
-       linkedList.add(12);
-       linkedList.add(13);
-       linkedList.add(14);
-       linkedList.add(15);
-       linkedList.add(2,18);
-
+        System.out.println();
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>(10);
+        linkedList.clear();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(3,5);
+        linkedList.printList();
+        System.out.println(linkedList.indexOf(5));
+        System.out.println(linkedList.contain(2));
 
 
     }

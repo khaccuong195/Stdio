@@ -52,23 +52,53 @@ public class MyLinkedList<E> implements MyList<E>{
 
     @Override
     public E remove(int index) {
+       Node temp =this.head;
+
+
         return null;
     }
 
     @Override
     public boolean contain(E e) {
+        if (numNodes == 0) return false;
+        else {
+            Node<E> temp = head;
+
+            while (temp != null) {
+                if (temp.getData() == e)
+                    return true;
+                temp = temp.next;
+            }
+        }
         return false;
     }
 
     @Override
     public int indexOf(E e) {
-        return 0;
+        Node<E> temp = head;
+        int count=0;
+        while (temp.next!=null){
+          if (temp.getData()== e){
+              return count;
+          }
+          count++;
+          temp=temp.next;
+        }
+        return -1;
     }
 
     @Override
     public void clear() {
           numNodes=0;
           head=null;
+    }
+
+    public void printList() {
+        Node<E> temp = head;
+        while(temp != null) {
+            System.out.println(temp.getData());
+            temp = temp.next;
+        }
     }
 
     public class Node<E>{
