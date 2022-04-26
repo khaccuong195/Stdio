@@ -1,21 +1,16 @@
 package JavaCollections;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class MyArrayList<E> implements MyList<E>{
     private E[] elements;
-    private final int DEFAULT_SIZE=10;
-    private int size =0;
+    private final int DEFAULT_SIZE = 10;
+    private int size = 0;
 
     public MyArrayList(){
-        this.elements= (E[]) new Objects [DEFAULT_SIZE];
+        this.elements= (E[]) new Object [DEFAULT_SIZE];
     }
 
-    private void ensureCapacity(){
-        int newsize = elements.length+DEFAULT_SIZE;
-        elements= Arrays.copyOf(elements,newsize);
-    }
 
     @Override
     public int getSize() {
@@ -45,6 +40,7 @@ public class MyArrayList<E> implements MyList<E>{
             elements[i] = elements[i-1];
 
         }
+        elements[index] = e;
 
     }
 
@@ -85,5 +81,10 @@ public class MyArrayList<E> implements MyList<E>{
             elements[i]=null;
         }
          this.size=0;
+    }
+
+    public void ensureCapacity(){
+        int newSize = elements.length+DEFAULT_SIZE;
+        elements= Arrays.copyOf(elements,newSize);
     }
 }
