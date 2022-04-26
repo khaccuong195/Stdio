@@ -17,18 +17,19 @@ public class Test {
         System.out.println(list.contain("net"));
 
 
+
         System.out.println();
         MyLinkedList<Integer> linkedList = new MyLinkedList<>(10);
-        linkedList.clear();
+
         linkedList.add(1);
         linkedList.add(2);
         linkedList.add(3);
         linkedList.add(4);
         linkedList.add(5,5);
         linkedList.printList();
-        System.out.println(linkedList.indexOf(5));
+        System.out.println(linkedList.indexOf(2));
         System.out.println(linkedList.contain(2));
-        linkedList.remove(0);
+        linkedList.remove(4);
         linkedList.printList();
 
 

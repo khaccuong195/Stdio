@@ -102,9 +102,10 @@ public class MyLinkedList<E> implements MyList<E>{
 
     public void printList() {
         Node<E> temp = head;
-        while(temp != null) {
-            System.out.println(temp.getData());
-            temp = temp.next;
+        for (int i =0;i<getSize();i++){
+            temp=temp.next;
+            System.out.print(temp.getData()+" ");
+
         }
     }
 
